@@ -40,9 +40,9 @@
                         
                     </div>
 
-                    <div class="vueautomatedcard">
-                        <img src="" alt="">
-                        <h2></h2>
+                    <div v-for="cards in contatti"class="vueautomatedcard">
+                        <img :src="Contatti[0].foto" alt="">
+                        <h2>{{Contatti[0].nome}}</h2>
                         <h3></h3>
                         <span></span>
                     </div>
