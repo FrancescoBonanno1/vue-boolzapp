@@ -2,12 +2,14 @@ const { createApp } = Vue;
 createApp({
 
     data() {
-        
         return {
             Contatti: [{
                 foto: `img/avatar_1.jpg`,
                 nome: `Michele`,
-                ultimomessaggio: ``,
+                messaggi:{
+                    testo :["ciao, tutto bene?", "va bene, fammi sapere", "per caso hai preso la mia borsa dimensionale?"],
+                    inviato : true
+                },
                 ora: `12.00`
             },
             {
@@ -55,15 +57,21 @@ createApp({
                 ultimomessaggio: ``,
                 ora: `12.00`
             },
-            ]
+            ],
+            id:[{
+                foto: `img/avatar_io.jpg`,
+                nome : `Sofia`,
+                messaggi :``
+            }],
 
         };
 
     },
 
     methods: {
+    
+        },
 
-    },
     mounted() {
 
 

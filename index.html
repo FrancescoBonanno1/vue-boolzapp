@@ -19,8 +19,8 @@
             <section id="appcontainer">
                 <div id="contactscontainer">
                     <div class="userspace">
-                        <img src="" alt="idfoto">
-                        <h3></h3>
+                        <img :src="id[0].foto" alt="idfoto">
+                        <h3>{{id[0].nome}}</h3>
                         <div id="faicons">
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
@@ -40,11 +40,11 @@
                         
                     </div>
 
-                    <div v-for="cards in contatti"class="vueautomatedcard">
-                        <img :src="Contatti[0].foto" alt="">
-                        <h2>{{Contatti[0].nome}}</h2>
-                        <h3></h3>
-                        <span></span>
+                    <div v-for="cards in Contatti"class="vueautomatedcard">
+                        <img :src="cards.foto" alt="">
+                        <h2>{{cards.nome}}</h2>
+                        <h3>{{cards.ultimomessaggio}}</h3>
+                        <span>{{cards.ora}}</span>
                     </div>
                 </div>
                 <div id="chatcontainer">
