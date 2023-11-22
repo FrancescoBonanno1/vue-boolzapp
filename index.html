@@ -40,7 +40,7 @@
                         
                     </div>
 
-                    <div v-for="cards in contacts"class="vueautomatedcard">
+                    <div @click="selezionachat(conversazioneattiva)" v-for="cards,conversazioneattiva in contacts"class="vueautomatedcard">
                         <img :src="cards.avatar" alt="">
                         <h2>{{cards.name}}</h2>
                         <h3>{{}}</h3>
@@ -51,7 +51,7 @@
                     <div id="actualuser">
                         <img :src="contacts[conversazioneattiva].avatar" alt="">
                         <h2>{{contacts[conversazioneattiva].name}}</h2>
-                        <h3>{{contacts[conversazioneattiva].data}}</h3>
+                        <h3>{{contacts[conversazioneattiva].messages[conversazioneattiva].data}}</h3>
                         <div id="containerfa">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>

@@ -176,7 +176,9 @@ createApp({
     },
 
     methods: {
-
+        selezionachat(conversazioneattiva){
+            console.log(conversazioneattiva)
+        }
     },
 
     mounted() {
@@ -184,5 +186,5 @@ createApp({
             console.log(messaggio.message)
         });
 
-    }
+    },
 }).mount(`#app`);
