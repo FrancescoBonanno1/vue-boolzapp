@@ -19,8 +19,8 @@
             <section id="appcontainer">
                 <div id="contactscontainer">
                     <div class="userspace">
-                        <img :src="id[0].foto" alt="idfoto">
-                        <h3>{{id[0].nome}}</h3>
+                        <img src="./img/avatar_io.jpg" alt="idfoto">
+                        <h3>Sofia</h3>
                         <div id="faicons">
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
@@ -40,15 +40,29 @@
                         
                     </div>
 
-                    <div v-for="cards in Contatti"class="vueautomatedcard">
-                        <img :src="cards.foto" alt="">
-                        <h2>{{cards.nome}}</h2>
-                        <h3>{{cards.ultimomessaggio}}</h3>
-                        <span>{{cards.ora}}</span>
+                    <div v-for="cards in contacts"class="vueautomatedcard">
+                        <img :src="cards.avatar" alt="">
+                        <h2>{{cards.name}}</h2>
+                        <h3>{{}}</h3>
+                        <span></span>
                     </div>
                 </div>
                 <div id="chatcontainer">
+                    <div id="actualuser">
+                        <img :src="contacts.avatar" alt="">
+                        <h2></h2>
+                        <h3>Ultimo accesso oggi alle</h3>
+                        <div id="containerfa">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
 
+                    <div class="chatspace">
+                        <div class="messagesent">questo è un messaggio inviato</div>
+                        <div class="messagereceived"></div>
+                    </div>
                 </div>
             </section>
         </main>
