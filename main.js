@@ -3,6 +3,7 @@ createApp({
 
     data() {
         return {
+            conversazioneattiva : 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -179,7 +180,9 @@ createApp({
     },
 
     mounted() {
-
+        this.contacts[0].messages.forEach(messaggio => {
+            console.log(messaggio.message)
+        });
 
     }
 }).mount(`#app`);
