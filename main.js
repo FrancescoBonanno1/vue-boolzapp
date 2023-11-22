@@ -176,8 +176,9 @@ createApp({
     },
 
     methods: {
-        selezionachat(conversazioneattiva){
-            console.log(conversazioneattiva)
+        selezionachat(indice){
+            this.conversazioneattiva = (indice)
+            console.log(indice)
         }
     },
 

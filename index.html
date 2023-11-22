@@ -40,7 +40,7 @@
                         
                     </div>
 
-                    <div @click="selezionachat(conversazioneattiva)" v-for="cards,conversazioneattiva in contacts"class="vueautomatedcard">
+                    <div @click="selezionachat(indice)" v-for="cards,conversazioneattiva in contacts"class="vueautomatedcard">
                         <img :src="cards.avatar" alt="">
                         <h2>{{cards.name}}</h2>
                         <h3>{{}}</h3>
@@ -61,6 +61,7 @@
 
                     <div class="chatspace">
                         <div v-for="messaggio in this.contacts[conversazioneattiva].messages" class="messagesent">
+                            <!--i messaggi che voglio saranno quelli dell'indice che mi darà conversazioneattiva una volta premuto con click-->
                             <h2>{{messaggio.message}}</h2>
                         </div>
                         <div class="messagereceived"></div>
