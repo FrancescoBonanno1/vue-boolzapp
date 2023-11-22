@@ -125,9 +125,8 @@ main {
 
 }
 
-#containerfa i{
-    margin-left: 0%
-    
+#containerfa{
+    width: 10%;
 }
 .chatspace{
     background-image: url(./img/mine.jpg);
@@ -135,12 +134,26 @@ main {
     height: 85%;
     overflow-y: auto;
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
 }
 .messagesent{
     background-color: rgb(17, 189, 17);
-    width: 30%;
-    height: 10%;
+    width: 25%;
+    height: 5%;
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-}
+align-self: flex-end;}
+    
+.messagereceived{
+        background-color: rgb(147, 151, 147);
+        width: 25%;
+        height: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-self: flex-start;}

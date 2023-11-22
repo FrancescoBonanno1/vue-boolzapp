@@ -51,7 +51,7 @@
                     <div id="actualuser">
                         <img :src="contacts.avatar" alt="">
                         <h2></h2>
-                        <h3>Ultimo accesso oggi alle</h3>
+                        <h3></h3>
                         <div id="containerfa">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
@@ -60,7 +60,9 @@
                     </div>
 
                     <div class="chatspace">
-                        <div class="messagesent">questo è un messaggio inviato</div>
+                        <div v-for="inviati in contacts[0].message" class="messagesent">
+                            <h2>{{inviati.message}}</h2>
+                        </div>
                         <div class="messagereceived"></div>
                     </div>
                 </div>
