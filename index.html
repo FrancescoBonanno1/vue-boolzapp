@@ -37,10 +37,11 @@
                     <div id="searchbar">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                         <input type="text" placeholder="Cerca tra i contatti">
-                        
+
                     </div>
 
-                    <div @click="selezionachat(indice)" v-for="cards,conversazioneattiva in contacts"class="vueautomatedcard">
+                    <div @click="selezionachat(indice)" v-for="cards,indice in contacts"
+                        class="vueautomatedcard">
                         <img :src="cards.avatar" alt="">
                         <h2>{{cards.name}}</h2>
                         <h3>{{}}</h3>
@@ -49,9 +50,10 @@
                 </div>
                 <div id="chatcontainer">
                     <div id="actualuser">
-                        <img :src="contacts[conversazioneattiva].avatar" alt="">
+                        <img :src="this.contacts[conversazioneattiva].avatar" alt="">
                         <h2>{{contacts[conversazioneattiva].name}}</h2>
-                        <h3>{{contacts[conversazioneattiva].messages[conversazioneattiva].data}}</h3>
+                        <h3>Ultimo accesso alle :{{contacts[conversazioneattiva].messages[conversazioneattiva].date}}
+                        </h3>
                         <div id="containerfa">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>

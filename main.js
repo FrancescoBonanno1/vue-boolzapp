@@ -1,9 +1,9 @@
 const { createApp } = Vue;
-createApp({
+const vue = createApp({
 
     data() {
         return {
-            conversazioneattiva : 0,
+            conversazioneattiva: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -166,7 +166,7 @@ createApp({
                         }
                     ],
                 },
-                
+
             ]
 
 
@@ -176,14 +176,13 @@ createApp({
     },
 
     methods: {
-        selezionachat(indice){
-            this.conversazioneattiva = (indice)
-            console.log(indice)
+        selezionachat(indice) { 
+            this.conversazioneattiva = indice
         }
     },
 
     mounted() {
-        this.contacts[0].messages.forEach(messaggio => {
+        this.contacts[this.conversazioneattiva].messages.forEach(messaggio => {
             console.log(messaggio.message)
         });
 
