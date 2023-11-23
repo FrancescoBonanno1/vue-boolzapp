@@ -156,11 +156,14 @@ main {
     flex-direction: column;
 
 }
-
+#chatflexbox{
+    display: flex;
+    flex-direction: column;
+}
 .messagesent {
     background-color: rgb(17, 189, 17);
     width: 25%;
-    height: 5%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -171,7 +174,7 @@ main {
 .messagereceived {
     background-color: rgb(147, 151, 147);
     width: 25%;
-    height: 5%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
