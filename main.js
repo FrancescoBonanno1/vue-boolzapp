@@ -16,7 +16,7 @@ const vue = createApp({
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: '10/01/2020 15:50:01',
                             message: 'Ricordati di stendere i panni',
                             status: 'sent'
                         },

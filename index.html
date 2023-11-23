@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boolzapp</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -52,7 +52,7 @@
                     <div id="actualuser">
                         <img :src="this.contacts[conversazioneattiva].avatar" alt="">
                         <h2>{{contacts[conversazioneattiva].name}}</h2>
-                        <h3>Ultimo accesso alle :{{contacts[conversazioneattiva].messages.date}}
+                        <h3>Ultimo accesso alle:{{contacts[conversazioneattiva].messages[1].date}}
                         </h3>
                         <div id="containerfa">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -64,7 +64,7 @@
                     <div class="chatspace">
                         <div v-for="messaggioinv in contacts[conversazioneattiva].messages" class="messagesent">
                             <!--i messaggi che voglio saranno quelli dell'indice che mi darà conversazioneattiva una volta premuto con click-->
-                            <h2 v-if="messaggioinv.status == 'sent'" v-bind:class="messagesent" >{{messaggioinv.message}}</h2>
+                            <h2 v-if="messaggioinv.status == 'sent'" v-bind:class="messagesent">{{messaggioinv.message}}</h2>
                         </div>
                         <div v-for="messaggioric in contacts[conversazioneattiva].messages" class="messagereceived">
                         <h2 v-if="messaggioric.status == 'received'" v-bind:class="messagereceived">{{messaggioric.message}}</h2>
