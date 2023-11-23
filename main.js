@@ -178,13 +178,36 @@ const vue = createApp({
     methods: {
         selezionachat(indice) { 
             this.conversazioneattiva = indice
-        }
+
+        },
+        inseriscimessaggio(){
+            const newmessage = this.text
+            if(newmessage !=""){
+            this.contacts[this.conversazioneattiva].messages.push({
+                date:"new",
+                message: newmessage,
+                status: 'sent'
+              });
+              this.text = "";
+        }},
+
+        ottienirisposta(){
+          const newresponse = "Ok"
+          this.contacts[this.conversazioneattiva].messages.push({
+            date :"",
+            message: newresponse,
+            status: 'received'})
+
+          }
     },
 
     mounted() {
         this.contacts[this.conversazioneattiva].messages.forEach(messaggio => {
             console.log(messaggio.message)
         });
+        setInterval(() => {
+            this.ottienirisposta()
+        }, 2000);
 
     },
 }).mount(`#app`);

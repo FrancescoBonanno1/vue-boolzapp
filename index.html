@@ -36,11 +36,11 @@
                     </div>
                     <div id="searchbar">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input type="text" placeholder="Cerca tra i contatti">
+                        <input v-model="text" placeholder="Cerca tra i contatti">
 
                     </div>
 
-                    <div @click="selezionachat(indice)" v-for="cards,indice in contacts"
+                    <div @click="selezionachat(indice)" v-for="(cards,indice) in contacts"
                         class="vueautomatedcard">
                         <img :src="cards.avatar" alt="">
                         <h2>{{cards.name}}</h2>
@@ -50,7 +50,7 @@
                 </div>
                 <div id="chatcontainer">
                     <div id="actualuser">
-                        <img :src="this.contacts[conversazioneattiva].avatar" alt="">
+                        <img :src="contacts[conversazioneattiva].avatar" alt="">
                         <h2>{{contacts[conversazioneattiva].name}}</h2>
                         <h3>Ultimo accesso alle:{{contacts[conversazioneattiva].messages[1].date}}
                         </h3>
@@ -65,14 +65,14 @@
                         <div id="chatflexbox" v-for="messaggio in contacts[conversazioneattiva].messages">
                             <!--i messaggi che voglio saranno quelli dell'indice che mi darà conversazioneattiva una volta premuto con click-->
                             <h2 v-if="messaggio.status == 'sent'" class="messagesent">{{messaggio.message}}</h2>
-                            <h2 v-else="messaggio.status == 'received'" class="messagereceived">{{messaggio.message}}</h2>
+                            <h2 v-else class="messagereceived">{{messaggio.message}}</h2>
                         </div>
                        
                     </div>
 
                     <div id="responsebar">
                         <button><i class="fa-regular fa-face-smile"></i></button>
-                        <input type="text" placeholder="Scrivi un messaggio...">
+                        <input v-model="text" @keyup.enter="inseriscimessaggio" placeholder="Scrivi un messaggio...">
                         <button><i class="fa-solid fa-microphone"></i></button>
                     </div>
                 </div>
