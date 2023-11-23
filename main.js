@@ -205,9 +205,11 @@ const vue = createApp({
         this.contacts[this.conversazioneattiva].messages.forEach(messaggio => {
             console.log(messaggio.message)
         });
+
+        
         setInterval(() => {
             this.ottienirisposta()
         }, 2000);
-
+       
     },
 }).mount(`#app`);
