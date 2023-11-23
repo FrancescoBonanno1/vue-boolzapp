@@ -44,7 +44,7 @@
                         class="vueautomatedcard">
                         <img :src="cards.avatar" alt="">
                         <h2>{{cards.name}}</h2>
-                        <h3>{{}}</h3>
+                        <h3></h3>
                         <span></span>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     <div id="actualuser">
                         <img :src="this.contacts[conversazioneattiva].avatar" alt="">
                         <h2>{{contacts[conversazioneattiva].name}}</h2>
-                        <h3>Ultimo accesso alle :{{contacts[conversazioneattiva].messages[conversazioneattiva].date}}
+                        <h3>Ultimo accesso alle :{{contacts[conversazioneattiva].messages.date}}
                         </h3>
                         <div id="containerfa">
                             <i class="fa-solid fa-magnifying-glass"></i>
