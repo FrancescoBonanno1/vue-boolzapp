@@ -62,11 +62,13 @@
                     </div>
 
                     <div class="chatspace">
-                        <div v-for="messaggio in this.contacts[conversazioneattiva].messages" class="messagesent">
+                        <div v-for="messaggioinv in contacts[conversazioneattiva].messages" class="messagesent">
                             <!--i messaggi che voglio saranno quelli dell'indice che mi darà conversazioneattiva una volta premuto con click-->
-                            <h2>{{messaggio.message}}</h2>
+                            <h2 v-if="messaggioinv.status == 'sent'" v-bind:class="messagesent" >{{messaggioinv.message}}</h2>
                         </div>
-                        <div class="messagereceived"></div>
+                        <div v-for="messaggioric in contacts[conversazioneattiva].messages" class="messagereceived">
+                        <h2 v-if="messaggioric.status == 'received'" v-bind:class="messagereceived">{{messaggioric.message}}</h2>
+                        </div>
                     </div>
                 </div>
             </section>
