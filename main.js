@@ -4,6 +4,7 @@ const vue = createApp({
     data() {
         return {
             conversazioneattiva: 0,
+            text: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -176,40 +177,41 @@ const vue = createApp({
     },
 
     methods: {
-        selezionachat(indice) { 
+        selezionachat(indice) {
             this.conversazioneattiva = indice
 
         },
-        inseriscimessaggio(){
+        inseriscimessaggio() {
             const newmessage = this.text
-            if(newmessage !=""){
+            if (newmessage != "") {
+                this.contacts[this.conversazioneattiva].messages.push({
+                    date: "new",
+                    message: newmessage,
+                    status: 'sent'
+                });
+                this.text = "";
+
+
+                setTimeout(() => {
+                    this.ottienirisposta()
+                }, 2000);
+            }
+        },
+
+        ottienirisposta() {
+            const newresponse = "Ok"
             this.contacts[this.conversazioneattiva].messages.push({
-                date:"new",
-                message: newmessage,
-                status: 'sent'
-              });
-              this.text = "";
-        }},
+                date: "",
+                message: newresponse,
+                status: 'received'
+            })
 
-        ottienirisposta(){
-          const newresponse = "Ok"
-          this.contacts[this.conversazioneattiva].messages.push({
-            date :"",
-            message: newresponse,
-            status: 'received'})
-
-          }
+        }
     },
 
     mounted() {
         this.contacts[this.conversazioneattiva].messages.forEach(messaggio => {
             console.log(messaggio.message)
         });
-
-        
-        setInterval(() => {
-            this.ottienirisposta()
-        }, 2000);
-       
     },
 }).mount(`#app`);

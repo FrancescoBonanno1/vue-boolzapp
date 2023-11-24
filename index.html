@@ -40,8 +40,7 @@
 
                     </div>
 
-                    <div @click="selezionachat(indice)" v-for="(cards,indice) in contacts"
-                        class="vueautomatedcard">
+                    <div @click="selezionachat(indice)" v-for="(cards,indice) in contacts" class="vueautomatedcard">
                         <img :src="cards.avatar" alt="">
                         <h2>{{cards.name}}</h2>
                         <h3></h3>
@@ -67,7 +66,7 @@
                             <h2 v-if="messaggio.status == 'sent'" class="messagesent">{{messaggio.message}}</h2>
                             <h2 v-else class="messagereceived">{{messaggio.message}}</h2>
                         </div>
-                       
+
                     </div>
 
                     <div id="responsebar">
